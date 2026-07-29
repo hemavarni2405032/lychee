@@ -228,6 +228,7 @@ impl<'a> ClientRequestChains<'a> {
     }
 }
 
+#[cfg(test)]
 mod test {
     use super::{
         ChainResult,
@@ -236,10 +237,11 @@ mod test {
     };
     use async_trait::async_trait;
 
-    #[allow(dead_code)] // work-around
+    #[allow(dead_code)]
     #[derive(Debug)]
     struct Add(usize);
 
+    #[allow(dead_code)]
     #[derive(Debug, PartialEq, Eq)]
     struct Result(usize);
 
