@@ -7,6 +7,1008 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.0](https://github.com/hemavarni2405032/lychee/compare/lychee-v0.23.0...lychee-v0.24.0) - 2026-07-29
+
+### Added
+
+- hide progress bar if input is `stdin` only ([#1938](https://github.com/hemavarni2405032/lychee/pull/1938))
+- Support sitemap.xml ([#2071](https://github.com/hemavarni2405032/lychee/pull/2071))
+- allow accepting timeouts ([#2063](https://github.com/hemavarni2405032/lychee/pull/2063))
+- Support multiple config files ([#2007](https://github.com/hemavarni2405032/lychee/pull/2007))
+- per-host caching ([#1974](https://github.com/hemavarni2405032/lychee/pull/1974))
+- implement per-host rate limiting and statistics ([#1929](https://github.com/hemavarni2405032/lychee/pull/1929))
+- support relative --root-dir ([#1912](https://github.com/hemavarni2405032/lychee/pull/1912))
+- propagate input loading/collecting errors to top level  ([#1864](https://github.com/hemavarni2405032/lychee/pull/1864))
+- file preprocessing ([#1891](https://github.com/hemavarni2405032/lychee/pull/1891))
+- print warning if input source matches no files ([#1865](https://github.com/hemavarni2405032/lychee/pull/1865))
+- *(base-url)* [**breaking**] disallow relative local base to avoid confusion ([#1857](https://github.com/hemavarni2405032/lychee/pull/1857))
+- improve InvalidIndexFile error to mention index file names ([#1859](https://github.com/hemavarni2405032/lychee/pull/1859))
+- make wikilink extraction and checking opt-in ([#1803](https://github.com/hemavarni2405032/lychee/pull/1803))
+- skip fragment checking for unsupported MIME types ([#1744](https://github.com/hemavarni2405032/lychee/pull/1744))
+- add 'user-content-' prefix to support github markdown fragment ([#1750](https://github.com/hemavarni2405032/lychee/pull/1750))
+- raise error when the default config file is invalid ([#1715](https://github.com/hemavarni2405032/lychee/pull/1715))
+- detect website fragments ([#1675](https://github.com/hemavarni2405032/lychee/pull/1675))
+- *(clap)* show help menu on no args as well ([#1458](https://github.com/hemavarni2405032/lychee/pull/1458))
+- add support for pre-commit ([#1396](https://github.com/hemavarni2405032/lychee/pull/1396))
+- Add support for ranges in the `--accept` option / config field ([#1167](https://github.com/hemavarni2405032/lychee/pull/1167))
+- Add support for --dump-inputs ([#1159](https://github.com/hemavarni2405032/lychee/pull/1159))
+- add support for basic auth per URI ([#1110](https://github.com/hemavarni2405032/lychee/pull/1110))
+
+### Fixed
+
+- CacheableResponse should only download file when needed ([#2035](https://github.com/hemavarni2405032/lychee/pull/2035))
+- Combine host stats with response stats ([#1975](https://github.com/hemavarni2405032/lychee/pull/1975))
+- make file matcher respect the hidden option ([#1936](https://github.com/hemavarni2405032/lychee/pull/1936))
+- inverted gitignore behaviour for --dump-inputs  ([#1882](https://github.com/hemavarni2405032/lychee/pull/1882))
+- move log level padding outside brackets ([#1871](https://github.com/hemavarni2405032/lychee/pull/1871))
+- do not reuse excluded status from cache ([#1850](https://github.com/hemavarni2405032/lychee/pull/1850))
+- fields missing from config.toml parsing logic ([#1843](https://github.com/hemavarni2405032/lychee/pull/1843))
+- do not check the fragment when http response err but accepted ([#1763](https://github.com/hemavarni2405032/lychee/pull/1763))
+- treat a fragment in an empty directory as an error ([#1756](https://github.com/hemavarni2405032/lychee/pull/1756))
+- resolve index file inside a directory ([#1752](https://github.com/hemavarni2405032/lychee/pull/1752))
+- skip fragment check if website URL doesn't contain fragment ([#1733](https://github.com/hemavarni2405032/lychee/pull/1733))
+- only check the fragment when it's a file ([#1713](https://github.com/hemavarni2405032/lychee/pull/1713))
+- do not fail on empty # and #top fragments ([#1609](https://github.com/hemavarni2405032/lychee/pull/1609))
+- Remove tokio console subscriber ([#1524](https://github.com/hemavarni2405032/lychee/pull/1524))
+- Treat sites with 403 status codes as broken links ([#1377](https://github.com/hemavarni2405032/lychee/pull/1377))
+- *(tests)* update the asserts in expired SSL certificate test ([#1373](https://github.com/hemavarni2405032/lychee/pull/1373))
+- *(tests)* update the expected output in cli tests ([#1362](https://github.com/hemavarni2405032/lychee/pull/1362))
+- Add accept option to merged config ([#1344](https://github.com/hemavarni2405032/lychee/pull/1344))
+- *(test_cookie_jar)* use google.com/ncr ([#1336](https://github.com/hemavarni2405032/lychee/pull/1336))
+- fix docs after release
+- fix typos
+- fix multiple_exclude_files test
+- fix url output
+- fix constant updating of progressbar ([#488](https://github.com/hemavarni2405032/lychee/pull/488))
+- fix line break
+- fix typo "continuos" -> "continuous" ([#175](https://github.com/hemavarni2405032/lychee/pull/175))
+- fix typo
+
+### Other
+
+- Never cache errors on disk
+- Unify input URL fetching with the link-checker's HostPool ([#2100](https://github.com/hemavarni2405032/lychee/pull/2100))
+- Merge pull request #2098 from lycheeverse/dependabot/cargo/dependencies-94675db464
+- Fix Windows Absolute Path Parsing and Remove HTTP Assumption ([#1837](https://github.com/hemavarni2405032/lychee/pull/1837))
+- Adds shell completions for lychee ([#1972](https://github.com/hemavarni2405032/lychee/pull/1972))
+- Increase value for --max-redirects ([#2087](https://github.com/hemavarni2405032/lychee/pull/2087))
+- Remove raw mode ([#2086](https://github.com/hemavarni2405032/lychee/pull/2086))
+- Report input source errors rather than tokio panics ([#2074](https://github.com/hemavarni2405032/lychee/pull/2074))
+- *(deps)* bump the dependencies group with 3 updates
+- Add Tor Project's support website
+- Add JUnit format ([#2066](https://github.com/hemavarni2405032/lychee/pull/2066))
+- Prevent duplicate requests to the same URLs ([#2067](https://github.com/hemavarni2405032/lychee/pull/2067))
+- *(deps)* bump the dependencies group with 3 updates
+- add WaitGroup for waiting for a dynamic set of tasks  ([#2046](https://github.com/hemavarni2405032/lychee/pull/2046))
+- Show line & column numbers ([#2056](https://github.com/hemavarni2405032/lychee/pull/2056))
+- *(deps)* bump the dependencies group with 6 updates
+- Fix toc action ([#2055](https://github.com/hemavarni2405032/lychee/pull/2055))
+- [**breaking**] add BaseInfo for resolving links, delete Base, cleanup utils ([#2005](https://github.com/hemavarni2405032/lychee/pull/2005))
+- Document file format support ([#2052](https://github.com/hemavarni2405032/lychee/pull/2052))
+- Improve help message as proposed by @katrinafyi
+- *(deps)* bump the dependencies group with 8 updates
+- Update changelogs
+- release v0.23.0
+- delete leftover openssl sentence in readme
+- Speed up slow tests ([#2019](https://github.com/hemavarni2405032/lychee/pull/2019))
+- *(deps)* bump the dependencies group with 2 updates
+- Improve README.md UX ([#2029](https://github.com/hemavarni2405032/lychee/pull/2029))
+- Replace OpenSSL with rustls  ([#1928](https://github.com/hemavarni2405032/lychee/pull/1928))
+- Replace check-if-email-exists with mailify ([#1985](https://github.com/hemavarni2405032/lychee/pull/1985))
+- Redirect hint ([#2020](https://github.com/hemavarni2405032/lychee/pull/2020))
+- Update to reqwest 0.13.1 & cargo update
+- *(deps)* bump the dependencies group across 1 directory with 4 updates
+- Use absolute instead of canonicalize for relative root-dir ([#2008](https://github.com/hemavarni2405032/lychee/pull/2008))
+- Log successful responses only for Debug and Trace
+- Only show redirect details in verbose mode
+- Show status code in redirect list
+- Use u8 instead of i8 for log level values
+- Update comparison table ([#1997](https://github.com/hemavarni2405032/lychee/pull/1997))
+- Rejected urls ([#1990](https://github.com/hemavarni2405032/lychee/pull/1990))
+- Accept ranges ([#1989](https://github.com/hemavarni2405032/lychee/pull/1989))
+- *(deps)* bump the dependencies group with 5 updates ([#1988](https://github.com/hemavarni2405032/lychee/pull/1988))
+- *(deps)* bump the dependencies group with 4 updates ([#1978](https://github.com/hemavarni2405032/lychee/pull/1978))
+- *(deps)* bump the dependencies group with 4 updates ([#1973](https://github.com/hemavarni2405032/lychee/pull/1973))
+- *(docs)* update TOC
+- Improve wikilink parsing and checking ([#1799](https://github.com/hemavarni2405032/lychee/pull/1799))
+- Specify that Scoop installation is for Windows ([#1969](https://github.com/hemavarni2405032/lychee/pull/1969))
+- Extract record_cache_event & skip mail caching
+- Add tldr-pages link to README ([#1963](https://github.com/hemavarni2405032/lychee/pull/1963))
+- *(deps)* bump the dependencies group across 1 directory with 3 updates ([#1961](https://github.com/hemavarni2405032/lychee/pull/1961))
+- Extract URLs from CSS ([#1956](https://github.com/hemavarni2405032/lychee/pull/1956))
+- release v0.22.0 ([#1894](https://github.com/hemavarni2405032/lychee/pull/1894))
+- *(deps)* bump the dependencies group with 5 updates ([#1944](https://github.com/hemavarni2405032/lychee/pull/1944))
+- progress bar ([#1914](https://github.com/hemavarni2405032/lychee/pull/1914))
+- Bump the dependencies group with 3 updates ([#1933](https://github.com/hemavarni2405032/lychee/pull/1933))
+- Fix parsing larger HTML blocks in MDX files ([#1924](https://github.com/hemavarni2405032/lychee/pull/1924))
+- use markdown formatting for files-from help text ([#1917](https://github.com/hemavarni2405032/lychee/pull/1917))
+- Bump the dependencies group across 1 directory with 8 updates ([#1916](https://github.com/hemavarni2405032/lychee/pull/1916))
+- use log::Level's deserialiser, and link example TOML ([#1907](https://github.com/hemavarni2405032/lychee/pull/1907))
+- Config file up to date ([#1906](https://github.com/hemavarni2405032/lychee/pull/1906))
+- check glob validity when parsing input source arguments ([#1869](https://github.com/hemavarni2405032/lychee/pull/1869))
+- Fix typos, and configure the typos tool ([#1895](https://github.com/hemavarni2405032/lychee/pull/1895))
+- Address new clippy lints with version 1.91
+- Bump MSRV
+- Bump the dependencies group across 1 directory with 7 updates
+- Update release notes
+- release v0.21.0
+- Update flag description
+- Fix working directory in build script
+- Make man page generation deterministic
+- Do not require inputs with generate flag
+- Bump the dependencies group across 1 directory with 15 updates ([#1874](https://github.com/hemavarni2405032/lychee/pull/1874))
+- Inline formatting arguments for anyhow macros as per new lint
+- Man pages ([#1858](https://github.com/hemavarni2405032/lychee/pull/1858))
+- Add --default-extension argument to force file format ([#1842](https://github.com/hemavarni2405032/lychee/pull/1842))
+- hard wrap help text for options ([#1854](https://github.com/hemavarni2405032/lychee/pull/1854))
+- Bump the dependencies group with 6 updates ([#1855](https://github.com/hemavarni2405032/lychee/pull/1855))
+- add exhaustivity check for `fold_in!` macro ([#1848](https://github.com/hemavarni2405032/lychee/pull/1848))
+- Additional redirect reporting ([#1853](https://github.com/hemavarni2405032/lychee/pull/1853))
+- Redirect reporting ([#1725](https://github.com/hemavarni2405032/lychee/pull/1725))
+- Add WinGet installation instructions ([#1849](https://github.com/hemavarni2405032/lychee/pull/1849))
+- [**breaking**] use `ResolvedInputSource` downstream of `InputContent` ([#1840](https://github.com/hemavarni2405032/lychee/pull/1840))
+- Bump the dependencies group with 5 updates ([#1845](https://github.com/hemavarni2405032/lychee/pull/1845))
+- Implement `--files-from` Option ([#1836](https://github.com/hemavarni2405032/lychee/pull/1836))
+- apply fallback extensions if directory links resolve to a dir ([#1826](https://github.com/hemavarni2405032/lychee/pull/1826))
+- clarify `--base-url` and `--root-dir` and their interactions ([#1787](https://github.com/hemavarni2405032/lychee/pull/1787))
+- Add test for making sure URL inputs always get checked ([#1824](https://github.com/hemavarni2405032/lychee/pull/1824))
+- add conda install to readme ([#1822](https://github.com/hemavarni2405032/lychee/pull/1822))
+- Bump the dependencies group with 3 updates ([#1821](https://github.com/hemavarni2405032/lychee/pull/1821))
+- Refactor error reporting ([#1731](https://github.com/hemavarni2405032/lychee/pull/1731))
+- release v0.20.1 ([#1813](https://github.com/hemavarni2405032/lychee/pull/1813))
+- Always check files explicitly if specified by user or matched by user glob ([#1816](https://github.com/hemavarni2405032/lychee/pull/1816))
+- *(docs)* update TOC
+- Bump the dependencies group across 1 directory with 3 updates ([#1812](https://github.com/hemavarni2405032/lychee/pull/1812))
+- Update changelog
+- release v0.20.0 ([#1808](https://github.com/hemavarni2405032/lychee/pull/1808))
+- Bump dependencies ([#1811](https://github.com/hemavarni2405032/lychee/pull/1811))
+- Skip binary and invalid UTF-8 inputs ([#1810](https://github.com/hemavarni2405032/lychee/pull/1810))
+- Refactor input dumping and path retrieval with extension filtering ([#1648](https://github.com/hemavarni2405032/lychee/pull/1648))
+- Use a HashSet to store inputs and avoid duplicates ([#1781](https://github.com/hemavarni2405032/lychee/pull/1781))
+- add `--index-files` flag, and turn off index file checking by default ([#1777](https://github.com/hemavarni2405032/lychee/pull/1777))
+- Cleanup input example ([#1792](https://github.com/hemavarni2405032/lychee/pull/1792))
+- FIx missing identifier in snap build action; add snap install to readme ([#1793](https://github.com/hemavarni2405032/lychee/pull/1793))
+- refactor `test_fragments` to clarify expected successes/fails ([#1776](https://github.com/hemavarni2405032/lychee/pull/1776))
+- Fix test
+- Remove JSON output files even on test failures
+- Add regression test
+- Improve test
+- Make excluded_paths part of Collector instead of Input
+- Make regex field in RegexFilter private
+- Apply clippy suggestions
+- Test regex functionality in --exclude-path flag
+- Update flag description & clean up
+- Replace Vec<PathBuf> with dedicated PathExcludes type
+- Unwrap option type
+- Replace unmaintained human-sort with numeric-sort ([#1759](https://github.com/hemavarni2405032/lychee/pull/1759))
+- Fix basic auth ([#1748](https://github.com/hemavarni2405032/lychee/pull/1748))
+- Update 'Users' section in the README
+- Add ProseKit to users
+- Migrate to Clippy 1.88 ([#1749](https://github.com/hemavarni2405032/lychee/pull/1749))
+- fix assertion in fragment checks
+- Replace unreliable API URL
+- display unsupported URLs ([#1727](https://github.com/hemavarni2405032/lychee/pull/1727))
+- release v0.19.1 ([#1726](https://github.com/hemavarni2405032/lychee/pull/1726))
+- Don't echo potentially sensitive header data ([#1728](https://github.com/hemavarni2405032/lychee/pull/1728))
+- Update changelog
+- release v0.19.0
+- Add cli test
+- Use StatusCodeSelector default as default accepted StatusCodes
+- Update tests
+- Remove duplicated information from output
+- Update test
+- Update test
+- Move archive functionality to library ([#1720](https://github.com/hemavarni2405032/lychee/pull/1720))
+- Bump the dependencies group across 1 directory with 3 updates ([#1714](https://github.com/hemavarni2405032/lychee/pull/1714))
+- Upgrade to 2024 edition ([#1711](https://github.com/hemavarni2405032/lychee/pull/1711))
+- Fix `test_exclude_example_domains` ([#1712](https://github.com/hemavarni2405032/lychee/pull/1712))
+- Add support for custom headers in input processing ([#1561](https://github.com/hemavarni2405032/lychee/pull/1561))
+- Fix lints ([#1705](https://github.com/hemavarni2405032/lychee/pull/1705))
+- Remove flag
+- Bump the dependencies group with 2 updates
+- Add possible values for minimum TLS version in help message ([#1693](https://github.com/hemavarni2405032/lychee/pull/1693))
+- Add TLS version option ([#1655](https://github.com/hemavarni2405032/lychee/pull/1655))
+- Bump the dependencies group across 1 directory with 11 updates ([#1692](https://github.com/hemavarni2405032/lychee/pull/1692))
+- Specify MSRV ([#1676](https://github.com/hemavarni2405032/lychee/pull/1676))
+- Fix outdated link
+- Remove once_cell as direct dependency
+- Make clippy happy ([#1681](https://github.com/hemavarni2405032/lychee/pull/1681))
+- Bump the dependencies group with 3 updates ([#1670](https://github.com/hemavarni2405032/lychee/pull/1670))
+- Fix accept/exclude range syntax and docs ([#1668](https://github.com/hemavarni2405032/lychee/pull/1668))
+- Add FreeBSD-Ask to users ([#1662](https://github.com/hemavarni2405032/lychee/pull/1662))
+- Bump the dependencies group with 4 updates ([#1664](https://github.com/hemavarni2405032/lychee/pull/1664))
+- Allow header values that contain equal signs ([#1647](https://github.com/hemavarni2405032/lychee/pull/1647))
+- Bump the dependencies group with 11 updates ([#1656](https://github.com/hemavarni2405032/lychee/pull/1656))
+- Bump the dependencies group across 1 directory with 14 updates ([#1653](https://github.com/hemavarni2405032/lychee/pull/1653))
+- Add support for custom file extensions in link checking. ([#1559](https://github.com/hemavarni2405032/lychee/pull/1559))
+- Format Markdown URLs with `<>` instead of `[]()` ([#1638](https://github.com/hemavarni2405032/lychee/pull/1638))
+- Bump the dependencies group across 1 directory with 21 updates ([#1643](https://github.com/hemavarni2405032/lychee/pull/1643))
+- add tests for URL extraction ending with a period ([#1641](https://github.com/hemavarni2405032/lychee/pull/1641))
+- renamed `base` to `base_url` (fixes #1607) ([#1629](https://github.com/hemavarni2405032/lychee/pull/1629))
+- Sort compact/detailed/markdown error output by file path ([#1622](https://github.com/hemavarni2405032/lychee/pull/1622))
+- release v0.18.1 ([#1598](https://github.com/hemavarni2405032/lychee/pull/1598))
+- Fix Porgressbar rendering Checkbox (Fixes #1626) ([#1627](https://github.com/hemavarni2405032/lychee/pull/1627))
+- Add Checkbox Formatting Option for Markdown Reports ([#1623](https://github.com/hemavarni2405032/lychee/pull/1623))
+- Fix new clippy lints ([#1625](https://github.com/hemavarni2405032/lychee/pull/1625))
+- Add links to shield and license #1616
+- Bump the dependencies group with 3 updates ([#1604](https://github.com/hemavarni2405032/lychee/pull/1604))
+- Bump the dependencies group with 3 updates ([#1602](https://github.com/hemavarni2405032/lychee/pull/1602))
+- Bump the dependencies group with 6 updates ([#1597](https://github.com/hemavarni2405032/lychee/pull/1597))
+- Fix typo
+- Move section
+- Add development section to README
+- release v0.18.0 ([#1554](https://github.com/hemavarni2405032/lychee/pull/1554))
+- Bump the dependencies group across 1 directory with 11 updates ([#1589](https://github.com/hemavarni2405032/lychee/pull/1589))
+- Introduce --root-dir ([#1576](https://github.com/hemavarni2405032/lychee/pull/1576))
+- Fix retries ([#1573](https://github.com/hemavarni2405032/lychee/pull/1573))
+- Pass along --max-retries config option ([#1572](https://github.com/hemavarni2405032/lychee/pull/1572))
+- Bump the dependencies group with 4 updates ([#1571](https://github.com/hemavarni2405032/lychee/pull/1571))
+- Bump the dependencies group with 4 updates ([#1570](https://github.com/hemavarni2405032/lychee/pull/1570))
+- Bump the dependencies group with 4 updates ([#1566](https://github.com/hemavarni2405032/lychee/pull/1566))
+- Rename `fail_map` to `error_map` for improved clarity in response statistics ([#1560](https://github.com/hemavarni2405032/lychee/pull/1560))
+- Add quirks support for `youtube-nocookie.com` and youtube embed URLs ([#1563](https://github.com/hemavarni2405032/lychee/pull/1563))
+- Support excluded paths in `--dump-inputs` ([#1556](https://github.com/hemavarni2405032/lychee/pull/1556))
+- Improve robustness of cache integration test ([#1557](https://github.com/hemavarni2405032/lychee/pull/1557))
+- Bump the dependencies group across 1 directory with 7 updates ([#1552](https://github.com/hemavarni2405032/lychee/pull/1552))
+- Bring back error output for links ([#1553](https://github.com/hemavarni2405032/lychee/pull/1553))
+- release v0.17.0 ([#1549](https://github.com/hemavarni2405032/lychee/pull/1549))
+- Add Forui to README.md's users section ([#1551](https://github.com/hemavarni2405032/lychee/pull/1551))
+- Bump the dependencies group across 1 directory with 12 updates ([#1544](https://github.com/hemavarni2405032/lychee/pull/1544))
+- Ignore casing when processing markdown fragments + check for percent encoded ancors ([#1535](https://github.com/hemavarni2405032/lychee/pull/1535))
+- Refactor cache handling test to make it more robust ([#1548](https://github.com/hemavarni2405032/lychee/pull/1548))
+- Fix format option in configuration file ([#1547](https://github.com/hemavarni2405032/lychee/pull/1547))
+- Fix skipping of email addresses in stylesheets ([#1546](https://github.com/hemavarni2405032/lychee/pull/1546))
+- Add support for relative links ([#1489](https://github.com/hemavarni2405032/lychee/pull/1489))
+- Add interesting projects who use lychee ([#1537](https://github.com/hemavarni2405032/lychee/pull/1537))
+- Add OWASP Threat Dragon to users
+- Update `pkg-url` of cargo binstall ([#1532](https://github.com/hemavarni2405032/lychee/pull/1532))
+- Bump the dependencies group with 3 updates ([#1530](https://github.com/hemavarni2405032/lychee/pull/1530))
+- Allow excluding cache based on status code ([#1403](https://github.com/hemavarni2405032/lychee/pull/1403))
+- Respect timeout when retrieving archived link ([#1526](https://github.com/hemavarni2405032/lychee/pull/1526))
+- Update TOC in README.md
+- Disable Wayback machine tests
+- Extend documentation on excluding links
+- The Git home page and Git Credential Manager use lychee ([#1519](https://github.com/hemavarni2405032/lychee/pull/1519))
+- Bump the dependencies group with 6 updates ([#1516](https://github.com/hemavarni2405032/lychee/pull/1516))
+- release ([#1514](https://github.com/hemavarni2405032/lychee/pull/1514))
+- make first line a top-level heading ([#1511](https://github.com/hemavarni2405032/lychee/pull/1511))
+- release ([#1512](https://github.com/hemavarni2405032/lychee/pull/1512))
+- Bump the dependencies group across 1 directory with 8 updates ([#1509](https://github.com/hemavarni2405032/lychee/pull/1509))
+- add tldr-pages as user ([#1508](https://github.com/hemavarni2405032/lychee/pull/1508))
+- Test ignored files
+- Test hidden files
+- Skip ignored and hidden files by default
+- Update README.md test to trim whitespaced lines & update README.md
+- Make gitignored files configurable and disable by default
+- Bump the dependencies group across 1 directory with 13 updates ([#1502](https://github.com/hemavarni2405032/lychee/pull/1502))
+- Extend compact format ([#1497](https://github.com/hemavarni2405032/lychee/pull/1497))
+- Bump the dependencies group with 2 updates ([#1494](https://github.com/hemavarni2405032/lychee/pull/1494))
+- *(docs)* mention MacPorts install in README.md ([#1491](https://github.com/hemavarni2405032/lychee/pull/1491))
+- Bump the dependencies group with 4 updates ([#1490](https://github.com/hemavarni2405032/lychee/pull/1490))
+- Mention Chocolatey
+- Bump the dependencies group with 5 updates ([#1488](https://github.com/hemavarni2405032/lychee/pull/1488))
+- Bump the dependencies group with 6 updates ([#1486](https://github.com/hemavarni2405032/lychee/pull/1486))
+- Run cargo nextest in CI and enable all tests ([#1483](https://github.com/hemavarni2405032/lychee/pull/1483))
+- Properly wire in tokio-console ([#1482](https://github.com/hemavarni2405032/lychee/pull/1482))
+- Bump the dependencies group across 1 directory with 29 updates ([#1478](https://github.com/hemavarni2405032/lychee/pull/1478))
+- Updated pulldown-cmark dependency and fixed maths parsing ([#1473](https://github.com/hemavarni2405032/lychee/pull/1473))
+- add openSUSE Tumbleweed to the installation instructions ([#1470](https://github.com/hemavarni2405032/lychee/pull/1470))
+- Add Nixpkgs to Installation ([#1448](https://github.com/hemavarni2405032/lychee/pull/1448))
+- Add response formatter; refactor stats formatter ([#1398](https://github.com/hemavarni2405032/lychee/pull/1398))
+- Add a way to handle "pretty URLs", i.e. URIs without `.html` extension ([#1422](https://github.com/hemavarni2405032/lychee/pull/1422))
+- Add Execa to list of users ([#1435](https://github.com/hemavarni2405032/lychee/pull/1435))
+- Fix typo in pre-commit config in README ([#1424](https://github.com/hemavarni2405032/lychee/pull/1424))
+- Fix clippy errors ([#1423](https://github.com/hemavarni2405032/lychee/pull/1423))
+- Bump to version 0.15.1
+- Fix spelling; `Github` -> `GitHub` ([#1416](https://github.com/hemavarni2405032/lychee/pull/1416))
+- Gracefully handle invalid URIs ([#1414](https://github.com/hemavarni2405032/lychee/pull/1414))
+- Bump to version 0.15.0
+- Fix typo
+- Disable lint with false positive
+- Adapt to breaking changes & revert to pulldown-cmark 0.9
+- Bump the dependencies group with 35 updates
+- add instructions for installing on Alpine Linux ([#1406](https://github.com/hemavarni2405032/lychee/pull/1406))
+- Bump to version; move to workspace versioning ([#1372](https://github.com/hemavarni2405032/lychee/pull/1372))
+- Fixed fragment generation for headings with inline code ([#1370](https://github.com/hemavarni2405032/lychee/pull/1370))
+- Make json output more verbose ([#1367](https://github.com/hemavarni2405032/lychee/pull/1367))
+- Bump version to 0.14.2
+- Merge missing `include_mail` flag into config ([#1357](https://github.com/hemavarni2405032/lychee/pull/1357))
+- Always output valid JSON with `--format=json` ([#1356](https://github.com/hemavarni2405032/lychee/pull/1356))
+- *(docs)* update TOC
+- Bump version to 0.14.1
+- Add integration test for `accept` (int and string)
+- Mention anchor/fragment support in docs
+- Exclude example TLDs from RFC 2606 ([#1335](https://github.com/hemavarni2405032/lychee/pull/1335))
+- Set `README.md` for crates
+- Set specific version for lychee-lib for crates.io
+- *(docs)* update TOC
+- Bump version
+- Bump version to 0.14.0
+- Bump the dependencies group with 18 updates ([#1328](https://github.com/hemavarni2405032/lychee/pull/1328))
+- Decode percent escapes in fragments ([#1275](https://github.com/hemavarni2405032/lychee/pull/1275))
+- Better TOML parsing error message ([#1332](https://github.com/hemavarni2405032/lychee/pull/1332))
+- Fix false-positive example domains ([#1316](https://github.com/hemavarni2405032/lychee/pull/1316))
+- Add Bencher to Lychee users list ([#1315](https://github.com/hemavarni2405032/lychee/pull/1315))
+- Bump the dependencies group with 26 updates ([#1311](https://github.com/hemavarni2405032/lychee/pull/1311))
+- Address warnings of the new clippy lints ([#1310](https://github.com/hemavarni2405032/lychee/pull/1310))
+- Update README.md with exit code 3 ([#1281](https://github.com/hemavarni2405032/lychee/pull/1281))
+- Bump the dependencies group with 14 updates ([#1260](https://github.com/hemavarni2405032/lychee/pull/1260))
+- *(docs)* update TOC
+- *(docs)* update TOC
+- Mention supported schemes ([#1255](https://github.com/hemavarni2405032/lychee/pull/1255))
+- Fix SPDX experssion in `Cargo.toml` ([#1251](https://github.com/hemavarni2405032/lychee/pull/1251))
+- Bump the dependencies group with 10 updates ([#1249](https://github.com/hemavarni2405032/lychee/pull/1249))
+- Bump reqwest from 0.11.18 to 0.11.19 ([#1240](https://github.com/hemavarni2405032/lychee/pull/1240))
+- Bump dashmap from 5.5.0 to 5.5.1 ([#1241](https://github.com/hemavarni2405032/lychee/pull/1241))
+- Check fragments in HTML files ([#1198](https://github.com/hemavarni2405032/lychee/pull/1198))
+- Bump tempfile from 3.7.1 to 3.8.0 ([#1238](https://github.com/hemavarni2405032/lychee/pull/1238))
+- Bump clap from 4.3.22 to 4.3.23 ([#1236](https://github.com/hemavarni2405032/lychee/pull/1236))
+- Bump serde from 1.0.183 to 1.0.185
+- Bump clap from 4.3.21 to 4.3.22
+- Make suggestion test more robust ([#1229](https://github.com/hemavarni2405032/lychee/pull/1229))
+- Bump tokio from 1.31.0 to 1.32.0 ([#1227](https://github.com/hemavarni2405032/lychee/pull/1227))
+- Bump anyhow from 1.0.74 to 1.0.75
+- Merge pull request #1221 from lycheeverse/dependabot/cargo/serde_json-1.0.105
+- Bump serde_json from 1.0.104 to 1.0.105
+- Update dependencies; fix flaky tests ([#1219](https://github.com/hemavarni2405032/lychee/pull/1219))
+- Bump tabled from 0.13.0 to 0.14.0 ([#1202](https://github.com/hemavarni2405032/lychee/pull/1202))
+- Merge pull request #1204 from lycheeverse/dependabot/cargo/openssl-sys-0.9.91
+- Merge pull request #1201 from lycheeverse/dependabot/cargo/serde-1.0.183
+- Bump regex from 1.9.1 to 1.9.3
+- Bump octocrab from 0.28.0 to 0.29.1 ([#1193](https://github.com/hemavarni2405032/lychee/pull/1193))
+- Fix rustls-tls feature ([#1194](https://github.com/hemavarni2405032/lychee/pull/1194))
+- Bump serde from 1.0.180 to 1.0.181
+- Bump serde from 1.0.179 to 1.0.180
+- Bump indicatif from 0.17.5 to 0.17.6
+- Introduce fragment checking for links to markdown files. ([#1126](https://github.com/hemavarni2405032/lychee/pull/1126))
+- Bump serde from 1.0.177 to 1.0.179
+- Bump serde from 1.0.176 to 1.0.177
+- Bump serde from 1.0.175 to 1.0.176
+- Bump serde_json from 1.0.103 to 1.0.104
+- Bump tabled from 0.12.2 to 0.13.0 ([#1180](https://github.com/hemavarni2405032/lychee/pull/1180))
+- Merge pull request #1178 from lycheeverse/dependabot/cargo/serde-1.0.175
+- Bump clap from 4.3.17 to 4.3.19
+- Bump serde from 1.0.171 to 1.0.174
+- Bump clap from 4.3.16 to 4.3.17
+- Make checking email addresses optional ([#1171](https://github.com/hemavarni2405032/lychee/pull/1171))
+- Bump clap from 4.3.15 to 4.3.16
+- Bump clap from 4.3.12 to 4.3.15
+- Bump assert_cmd from 2.0.11 to 2.0.12 ([#1163](https://github.com/hemavarni2405032/lychee/pull/1163))
+- Bump anyhow from 1.0.71 to 1.0.72
+- Merge pull request #1164 from lycheeverse/dependabot/cargo/uuid-1.4.1
+- Merge pull request #1162 from lycheeverse/dependabot/cargo/clap-4.3.12
+- Bump clap from 4.3.11 to 4.3.12
+- *(docs)* update TOC
+- *(docs)* update TOC
+- Update TOC
+- Update TOC
+- Added TOC-generator ([#1151](https://github.com/hemavarni2405032/lychee/pull/1151))
+- Bump reqwest_cookie_store from 0.5.0 to 0.6.0 ([#1158](https://github.com/hemavarni2405032/lychee/pull/1158))
+- Bump serde_json from 1.0.100 to 1.0.102
+- Cookie Support ([#1146](https://github.com/hemavarni2405032/lychee/pull/1146))
+- Don't check Twitter URLs ([#1147](https://github.com/hemavarni2405032/lychee/pull/1147))
+- Bump dashmap from 5.4.0 to 5.5.0 ([#1153](https://github.com/hemavarni2405032/lychee/pull/1153))
+- Merge pull request #1150 from lycheeverse/dependabot/cargo/regex-1.9.1
+- Bump regex from 1.9.0 to 1.9.1
+- Bump serde from 1.0.166 to 1.0.167 ([#1144](https://github.com/hemavarni2405032/lychee/pull/1144))
+- Bump pretty_assertions from 1.3.0 to 1.4.0 ([#1143](https://github.com/hemavarni2405032/lychee/pull/1143))
+- Added Back-to-Top Button in the Readme file ([#1142](https://github.com/hemavarni2405032/lychee/pull/1142))
+- Merge pull request #1139 from lycheeverse/dependabot/cargo/clap-4.3.11
+- Bump toml from 0.7.5 to 0.7.6
+- Bump regex from 1.8.4 to 1.9.0 ([#1138](https://github.com/hemavarni2405032/lychee/pull/1138))
+- Extend remap feature ([#1133](https://github.com/hemavarni2405032/lychee/pull/1133))
+- Bump serde_json from 1.0.99 to 1.0.100
+- Bump serde from 1.0.165 to 1.0.166
+- Bump serde from 1.0.164 to 1.0.165
+- Bump tokio from 1.28.2 to 1.29.1 ([#1131](https://github.com/hemavarni2405032/lychee/pull/1131))
+- Bump clap from 4.3.9 to 4.3.10
+- Bump clap from 4.3.8 to 4.3.9
+- Bump uuid from 1.3.4 to 1.4.0 ([#1124](https://github.com/hemavarni2405032/lychee/pull/1124))
+- Cleanup Cargo.toml files ([#1121](https://github.com/hemavarni2405032/lychee/pull/1121))
+- Bump openssl-sys from 0.9.88 to 0.9.90
+- Bump strum from 0.24.1 to 0.25.0 ([#1114](https://github.com/hemavarni2405032/lychee/pull/1114))
+- Bump tabled from 0.12.1 to 0.12.2
+- Bump serde_json from 1.0.96 to 1.0.97
+- Add optional Rustls support ([#1099](https://github.com/hemavarni2405032/lychee/pull/1099))
+- Bump once_cell from 1.17.2 to 1.18.0 ([#1096](https://github.com/hemavarni2405032/lychee/pull/1096))
+- Bump tempfile from 3.5.0 to 3.6.0 ([#1100](https://github.com/hemavarni2405032/lychee/pull/1100))
+- Bump uuid from 1.3.3 to 1.3.4
+- Bump log from 0.4.18 to 0.4.19
+- Bump serde from 1.0.163 to 1.0.164
+- Bump wiremock from 0.5.18 to 0.5.19
+- Bump regex from 1.8.3 to 1.8.4
+- Bump indicatif from 0.17.4 to 0.17.5
+- Bump tabled from 0.12.0 to 0.12.1
+- Don't cache unknown status codes ([#1090](https://github.com/hemavarni2405032/lychee/pull/1090))
+- Add check duration to compact format
+- Remove inaccurate details in compact view ([#1088](https://github.com/hemavarni2405032/lychee/pull/1088))
+- Merge pull request #1084 from lycheeverse/dependabot/cargo/log-0.4.18
+- Bump log from 0.4.17 to 0.4.18
+- Bump tokio from 1.28.1 to 1.28.2
+- Bump csv from 1.2.1 to 1.2.2
+- Bump indicatif from 0.17.3 to 0.17.4
+- Merge pull request #1085 from lycheeverse/dependabot/cargo/openssl-sys-0.9.88
+- Bump const_format from 0.2.30 to 0.2.31
+- Bump regex from 1.8.2 to 1.8.3
+- Bump regex from 1.8.1 to 1.8.2
+- Bump toml from 0.7.3 to 0.7.4 ([#1072](https://github.com/hemavarni2405032/lychee/pull/1072))
+- Bump console from 0.15.6 to 0.15.7
+- Alpine Docker Image Support ([#1074](https://github.com/hemavarni2405032/lychee/pull/1074))
+- Add metadata for cargo-binstall ([#1073](https://github.com/hemavarni2405032/lychee/pull/1073))
+- Bump console from 0.15.5 to 0.15.6
+- Bump reqwest from 0.11.17 to 0.11.18
+- Prettier colors and progress bar ([#1069](https://github.com/hemavarni2405032/lychee/pull/1069))
+- Bump uuid from 1.3.2 to 1.3.3
+- bump version
+- Concurrent archives ([#1027](https://github.com/hemavarni2405032/lychee/pull/1027))
+- Bump tabled from 0.11.1 to 0.12.0 ([#1052](https://github.com/hemavarni2405032/lychee/pull/1052))
+- Bump serde from 1.0.162 to 1.0.163
+- Bump tokio from 1.28.0 to 1.28.1
+- Add check duration (in seconds) to report ([#1064](https://github.com/hemavarni2405032/lychee/pull/1064))
+- Bump tokio from 1.27.0 to 1.28.0 ([#1056](https://github.com/hemavarni2405032/lychee/pull/1056))
+- Bump serde from 1.0.160 to 1.0.162
+- Merge pull request #1061 from lycheeverse/dependabot/cargo/anyhow-1.0.71
+- Merge pull request #1059 from lycheeverse/dependabot/cargo/reqwest-0.11.17
+- Bump reqwest from 0.11.16 to 0.11.17
+- Bump tokio-stream from 0.1.12 to 0.1.14
+- Bump openssl-sys from 0.9.86 to 0.9.87
+- Bump tracing-subscriber from 0.3.16 to 0.3.17
+- Bump regex from 1.7.3 to 1.8.1 ([#1051](https://github.com/hemavarni2405032/lychee/pull/1051))
+- Bump openssl-sys from 0.9.85 to 0.9.86
+- prepare for release
+- Bump assert_cmd from 2.0.10 to 2.0.11
+- Bump predicates from 3.0.2 to 3.0.3
+- Bump tabled from 0.10.0 to 0.11.1 ([#1039](https://github.com/hemavarni2405032/lychee/pull/1039))
+- Bump serde_json from 1.0.95 to 1.0.96 ([#1038](https://github.com/hemavarni2405032/lychee/pull/1038))
+- Use standard error for error output ([#990](https://github.com/hemavarni2405032/lychee/pull/990))
+- Bump strum from 0.23.0 to 0.24.1 ([#1022](https://github.com/hemavarni2405032/lychee/pull/1022))
+- Bump serde from 1.0.159 to 1.0.160
+- Don't panic on invalid response URIs
+- Avoid unwrap when deserializing statuscode
+- Merge pull request #1033 from lycheeverse/dependabot/cargo/openssl-sys-0.9.85
+- Bump uuid from 1.3.0 to 1.3.1
+- Bump wiremock from 0.5.17 to 0.5.18
+- Bump tokio from 1.26.0 to 1.27.0 ([#1021](https://github.com/hemavarni2405032/lychee/pull/1021))
+- Bump tempfile from 3.4.0 to 3.5.0 ([#1026](https://github.com/hemavarni2405032/lychee/pull/1026))
+- Bump serde_json from 1.0.94 to 1.0.95
+- Merge pull request #1024 from lycheeverse/dependabot/cargo/serde-1.0.159
+- Bump serde from 1.0.158 to 1.0.159
+- Wayback integration ([#1003](https://github.com/hemavarni2405032/lychee/pull/1003))
+- Merge pull request #1019 from lycheeverse/dependabot/cargo/predicates-3.0.2
+- Bump predicates from 3.0.1 to 3.0.2
+- Status codes in maps ([#1014](https://github.com/hemavarni2405032/lychee/pull/1014))
+- Bump openssl-sys from 0.9.82 to 0.9.83
+- Bump regex from 1.7.1 to 1.7.2
+- Bump reqwest from 0.11.14 to 0.11.15
+- Merge pull request #1007 from lycheeverse/dependabot/cargo/serde-1.0.158
+- Merge pull request #1008 from lycheeverse/dependabot/cargo/openssl-sys-0.9.82
+- Merge pull request #1004 from lycheeverse/dependabot/cargo/clap-4.1.11
+- Bump anyhow from 1.0.69 to 1.0.70
+- cleanup empty file
+- Bump assert_cmd from 2.0.9 to 2.0.10
+- Bump clap from 4.1.8 to 4.1.9
+- Bump predicates from 2.1.5 to 3.0.1 ([#1000](https://github.com/hemavarni2405032/lychee/pull/1000))
+- Bump assert_cmd from 2.0.8 to 2.0.9
+- Bump openssl-sys from 0.9.80 to 0.9.81
+- Bump serde from 1.0.155 to 1.0.156
+- Bump toml from 0.7.2 to 0.7.3
+- Bump futures from 0.3.26 to 0.3.27
+- Bump serde from 1.0.154 to 1.0.155
+- Fix nested URL extraction in verbatim elements ([#988](https://github.com/hemavarni2405032/lychee/pull/988))
+- Better retry handling ([#981](https://github.com/hemavarni2405032/lychee/pull/981))
+- Fix `--max-redirects` ([#987](https://github.com/hemavarni2405032/lychee/pull/987))
+- Bump serde from 1.0.153 to 1.0.154
+- Bump serde from 1.0.152 to 1.0.153
+- Bump csv from 1.2.0 to 1.2.1
+- Bump serde_json from 1.0.93 to 1.0.94
+- Split up quirks and skip twitter check
+- Explicit quirks output for test
+- Custom config handling to spot errors when passing invalid config and ignoring errors loading missing default conf
+- update help message
+- Revert "Don't ignore file-not-found errors when loading config"
+- Add test for missing and example config file and helper methods
+- Don't ignore file-not-found errors when loading config
+- Put lycheecache tests into separate subfolders to avoid race
+- Ignored URLs don't lead to failing exit code
+- Fix `test_skip_cache_unsupported`
+- Fix cache test
+- Split up test
+- Ignore remap test
+- Excluded URLs are no longer cached
+- Multiple arguments get handled differently in clap in comparison to structopt
+- Fix expected json output
+- Fix CLI tests
+- Bump tokio from 1.25.0 to 1.26.0 ([#974](https://github.com/hemavarni2405032/lychee/pull/974))
+- Bump clap from 4.1.7 to 4.1.8
+- Bump clap from 4.1.6 to 4.1.7
+- Bump tempfile from 3.3.0 to 3.4.0 ([#967](https://github.com/hemavarni2405032/lychee/pull/967))
+- Update verbosity docs
+- Customize verbosity ([#956](https://github.com/hemavarni2405032/lychee/pull/956))
+- Update name of Arch package ([#959](https://github.com/hemavarni2405032/lychee/pull/959))
+- Fix cached 200 status code handling ([#958](https://github.com/hemavarni2405032/lychee/pull/958))
+- Bump to v0.11.0 ([#957](https://github.com/hemavarni2405032/lychee/pull/957))
+- Bump tokio-stream from 0.1.11 to 0.1.12
+- Bump http from 0.2.8 to 0.2.9
+- Bump clap from 4.1.4 to 4.1.6
+- Bump once_cell from 1.17.0 to 1.17.1
+- Bump csv from 1.1.6 to 1.2.0 ([#950](https://github.com/hemavarni2405032/lychee/pull/950))
+- Bump serde_json from 1.0.92 to 1.0.93
+- Bump toml from 0.7.1 to 0.7.2
+- Merge pull request #943 from lycheeverse/dependabot/cargo/serde_json-1.0.92
+- Bump serde_json from 1.0.91 to 1.0.92
+- Bump uuid from 1.2.2 to 1.3.0 ([#939](https://github.com/hemavarni2405032/lychee/pull/939))
+- Merge pull request #937 from lycheeverse/dependabot/cargo/futures-0.3.26
+- Bump toml from 0.7.0 to 0.7.1
+- Bump toml from 0.5.11 to 0.7.0 ([#933](https://github.com/hemavarni2405032/lychee/pull/933))
+- Bump tokio from 1.24.2 to 1.25.0 ([#935](https://github.com/hemavarni2405032/lychee/pull/935))
+- Bump clap from 4.1.3 to 4.1.4
+- Bump clap from 4.1.1 to 4.1.3
+- Merge pull request #925 from lycheeverse/dependabot/cargo/reqwest-0.11.14
+- Bump reqwest from 0.11.13 to 0.11.14
+- Bump tokio from 1.24.1 to 1.24.2
+- Bump indicatif from 0.17.2 to 0.17.3
+- Bump clap from 4.0.32 to 4.1.1 ([#917](https://github.com/hemavarni2405032/lychee/pull/917))
+- [**breaking**] improve client and remap modules ([#913](https://github.com/hemavarni2405032/lychee/pull/913))
+- Bump console from 0.15.4 to 0.15.5
+- Bump wiremock from 0.5.16 to 0.5.17
+- Merge pull request #911 from lycheeverse/dependabot/cargo/regex-1.7.1
+- Bump regex from 1.7.0 to 1.7.1
+- Bump tokio from 1.23.1 to 1.24.1 ([#907](https://github.com/hemavarni2405032/lychee/pull/907))
+- Bump tokio from 1.23.0 to 1.23.1
+- Harden URL detection and extend verbatim elements ([#899](https://github.com/hemavarni2405032/lychee/pull/899))
+- Bump console from 0.15.3 to 0.15.4 ([#896](https://github.com/hemavarni2405032/lychee/pull/896))
+- Bump wiremock from 0.5.15 to 0.5.16 ([#892](https://github.com/hemavarni2405032/lychee/pull/892))
+- Merge pull request #890 from lycheeverse/dependabot/cargo/predicates-2.1.5
+- Bump once_cell from 1.16.0 to 1.17.0 ([#891](https://github.com/hemavarni2405032/lychee/pull/891))
+- Bump serde from 1.0.151 to 1.0.152 ([#887](https://github.com/hemavarni2405032/lychee/pull/887))
+- Bump console from 0.15.2 to 0.15.3 ([#888](https://github.com/hemavarni2405032/lychee/pull/888))
+- Bump clap from 4.0.30 to 4.0.32 ([#885](https://github.com/hemavarni2405032/lychee/pull/885))
+- Change progress bar style ([#718](https://github.com/hemavarni2405032/lychee/pull/718))
+- Bump openssl-sys from 0.9.79 to 0.9.80 ([#884](https://github.com/hemavarni2405032/lychee/pull/884))
+- Bump clap from 4.0.29 to 4.0.30 ([#883](https://github.com/hemavarni2405032/lychee/pull/883))
+- Extend response stats in verbose mode ([#882](https://github.com/hemavarni2405032/lychee/pull/882))
+- Update Dependencies ([#881](https://github.com/hemavarni2405032/lychee/pull/881))
+- Fix Rust 1.66 clippy lints ([#879](https://github.com/hemavarni2405032/lychee/pull/879))
+- Bump toml from 0.5.9 to 0.5.10 ([#871](https://github.com/hemavarni2405032/lychee/pull/871))
+- Add scoop (Windows) installation instructions
+- Bump serde from 1.0.149 to 1.0.150 ([#867](https://github.com/hemavarni2405032/lychee/pull/867))
+- Refactor check function ([#860](https://github.com/hemavarni2405032/lychee/pull/860))
+- Bump tokio from 1.22.0 to 1.23.0 ([#864](https://github.com/hemavarni2405032/lychee/pull/864))
+- Bump openssl-sys from 0.9.78 to 0.9.79
+- Bump serde from 1.0.148 to 1.0.149
+- Bump assert_cmd from 2.0.6 to 2.0.7
+- Bump predicates from 2.1.3 to 2.1.4
+- Bump env_logger from 0.9.3 to 0.10.0 ([#855](https://github.com/hemavarni2405032/lychee/pull/855))
+- Bump clap from 4.0.28 to 4.0.29
+- Bump clap from 4.0.27 to 4.0.28
+- Fix verbosity serialization ([#853](https://github.com/hemavarni2405032/lychee/pull/853))
+- Less verbose cache age formatting ([#849](https://github.com/hemavarni2405032/lychee/pull/849))
+- Add different verbosity levels ([#824](https://github.com/hemavarni2405032/lychee/pull/824))
+- Bump serde from 1.0.147 to 1.0.148
+- Merge pull request #839 from lycheeverse/dependabot/cargo/openssl-sys-0.9.78
+- Allow overriding accepted status codes for cached URIs ([#843](https://github.com/hemavarni2405032/lychee/pull/843))
+- Bump tokio from 1.21.2 to 1.22.0 ([#836](https://github.com/hemavarni2405032/lychee/pull/836))
+- Bump clap from 4.0.26 to 4.0.27
+- Bump serde_json from 1.0.88 to 1.0.89
+- Bump serde_json from 1.0.87 to 1.0.88
+- Merge pull request #833 from lycheeverse/dependabot/cargo/clap-4.0.26
+- Bump clap from 4.0.25 to 4.0.26
+- Bump clap from 4.0.24 to 4.0.25
+- Merge pull request #830 from lycheeverse/dependabot/cargo/clap-4.0.24
+- Bump clap from 4.0.23 to 4.0.24
+- Merge pull request #827 from lycheeverse/dependabot/cargo/predicates-2.1.3
+- Bump clap from 4.0.22 to 4.0.23
+- Bump clap from 3.2.23 to 4.0.22 ([#813](https://github.com/hemavarni2405032/lychee/pull/813))
+- Fix typo
+- Add note about lychee.toml and exclude_path to README.md ([#823](https://github.com/hemavarni2405032/lychee/pull/823))
+- Bump indicatif from 0.17.1 to 0.17.2
+- Bump version
+- Don't check example mail addresses by default ([#815](https://github.com/hemavarni2405032/lychee/pull/815))
+- Move back to cargo publish ([#814](https://github.com/hemavarni2405032/lychee/pull/814))
+- Add support for dumping links to file ([#810](https://github.com/hemavarni2405032/lychee/pull/810))
+- Bump Version ([#811](https://github.com/hemavarni2405032/lychee/pull/811))
+- Fix parsing error of email addresses with query params ([#809](https://github.com/hemavarni2405032/lychee/pull/809))
+- Improve wording
+- Bump once_cell from 1.15.0 to 1.16.0 ([#806](https://github.com/hemavarni2405032/lychee/pull/806))
+- Update badge name
+- Bump clap from 3.2.22 to 3.2.23
+- Fix syntax highlighting in README ([#792](https://github.com/hemavarni2405032/lychee/pull/792))
+- Merge pull request #802 from lycheeverse/dependabot/cargo/serde-1.0.147
+- Bump openssl-sys from 0.9.76 to 0.9.77
+- Bump uuid from 1.1.2 to 1.2.1 ([#789](https://github.com/hemavarni2405032/lychee/pull/789))
+- Bump tabled from 0.8.0 to 0.10.0 ([#793](https://github.com/hemavarni2405032/lychee/pull/793))
+- Extend description of "--exclude" to also exclude email addresses, not only URLs ([#801](https://github.com/hemavarni2405032/lychee/pull/801))
+- Merge pull request #797 from lycheeverse/dependabot/cargo/assert_cmd-2.0.5
+- Merge pull request #798 from lycheeverse/dependabot/cargo/anyhow-1.0.66
+- Bump anyhow from 1.0.65 to 1.0.66
+- Bump serde_json from 1.0.86 to 1.0.87
+- Bump futures from 0.3.24 to 0.3.25
+- Bump tokio-stream from 0.1.10 to 0.1.11
+- Bump const_format from 0.2.28 to 0.2.30
+- Merge pull request #786 from lycheeverse/dependabot/cargo/const_format-0.2.28
+- Merge pull request #788 from lycheeverse/dependabot/cargo/wiremock-0.5.15
+- Bump wiremock from 0.5.14 to 0.5.15
+- Bump tracing-subscriber from 0.3.15 to 0.3.16
+- Bump console from 0.15.1 to 0.15.2
+- Bump tokio from 1.21.1 to 1.21.2
+- Merge pull request #773 from lycheeverse/dependabot/cargo/serde-1.0.145
+- Bump serde from 1.0.144 to 1.0.145
+- Bump once_cell from 1.14.0 to 1.15.0 ([#771](https://github.com/hemavarni2405032/lychee/pull/771))
+- Bump reqwest from 0.11.11 to 0.11.12
+- Merge pull request #769 from lycheeverse/dependabot/cargo/tokio-stream-0.1.10
+- Bump tokio-stream from 0.1.9 to 0.1.10
+- Bump once_cell from 1.13.1 to 1.14.0 ([#755](https://github.com/hemavarni2405032/lychee/pull/755))
+- Merge pull request #766 from lycheeverse/dependabot/cargo/anyhow-1.0.65
+- Bump anyhow from 1.0.64 to 1.0.65
+- Merge pull request #763 from lycheeverse/dependabot/cargo/clap-3.2.21
+- Bump tokio from 1.21.0 to 1.21.1
+- Bump anyhow from 1.0.63 to 1.0.64
+- Bump headers from 0.3.7 to 0.3.8
+- Bump dashmap from 5.3.4 to 5.4.0 ([#748](https://github.com/hemavarni2405032/lychee/pull/748))
+- Bump tokio from 1.20.1 to 1.21.0 ([#754](https://github.com/hemavarni2405032/lychee/pull/754))
+- Bump clap from 3.2.19 to 3.2.20
+- Bump anyhow from 1.0.62 to 1.0.63
+- Bump clap from 3.2.18 to 3.2.19
+- Merge pull request #747 from lycheeverse/dependabot/cargo/futures-0.3.24
+- Bump futures from 0.3.23 to 0.3.24
+- Bump serde_json from 1.0.83 to 1.0.85
+- Bump serde from 1.0.143 to 1.0.144
+- Twitter quirk fixed; adjust test ([#741](https://github.com/hemavarni2405032/lychee/pull/741))
+- Merge pull request #738 from lycheeverse/dependabot/cargo/anyhow-1.0.62
+- Bump once_cell from 1.13.0 to 1.13.1
+- Bump futures from 0.3.21 to 0.3.23
+- Mention CONTRIBUTING.md in README
+- Add link to new homepage
+- Move from structopt to clap ([#732](https://github.com/hemavarni2405032/lychee/pull/732))
+- Listing InnerSourceCommons/InnerSourcePatterns as user ([#730](https://github.com/hemavarni2405032/lychee/pull/730))
+- Markdown-status ([#729](https://github.com/hemavarni2405032/lychee/pull/729))
+- Bump anyhow from 1.0.60 to 1.0.61
+- Add new SVG-based screencast ([#693](https://github.com/hemavarni2405032/lychee/pull/693))
+- Bump serde from 1.0.142 to 1.0.143
+- Bump serde from 1.0.141 to 1.0.142 ([#719](https://github.com/hemavarni2405032/lychee/pull/719))
+- Bump serde_json from 1.0.82 to 1.0.83 ([#720](https://github.com/hemavarni2405032/lychee/pull/720))
+- Bump wiremock from 0.5.13 to 0.5.14 ([#722](https://github.com/hemavarni2405032/lychee/pull/722))
+- reorder md output ([#708](https://github.com/hemavarni2405032/lychee/pull/708))
+- Bump tabled from 0.7.0 to 0.8.0 ([#701](https://github.com/hemavarni2405032/lychee/pull/701))
+- Bump anyhow from 1.0.59 to 1.0.60 ([#716](https://github.com/hemavarni2405032/lychee/pull/716))
+- Bump indicatif from 0.16.2 to 0.17.0 ([#711](https://github.com/hemavarni2405032/lychee/pull/711))
+- Bump anyhow from 1.0.58 to 1.0.59 ([#710](https://github.com/hemavarni2405032/lychee/pull/710))
+- Bump serde from 1.0.140 to 1.0.141 ([#713](https://github.com/hemavarni2405032/lychee/pull/713))
+- Bump console from 0.15.0 to 0.15.1 ([#707](https://github.com/hemavarni2405032/lychee/pull/707))
+- Bump version ([#703](https://github.com/hemavarni2405032/lychee/pull/703))
+- Bump tokio from 1.20.0 to 1.20.1 ([#702](https://github.com/hemavarni2405032/lychee/pull/702))
+- Update to gracefully handle nonexistent relative paths ([#691](https://github.com/hemavarni2405032/lychee/pull/691))
+- Bump serde from 1.0.139 to 1.0.140 ([#699](https://github.com/hemavarni2405032/lychee/pull/699))
+- Bump tracing-subscriber from 0.3.14 to 0.3.15 ([#700](https://github.com/hemavarni2405032/lychee/pull/700))
+- Mention other file formats
+- Skip caching unsupported and excluded URLs ([#692](https://github.com/hemavarni2405032/lychee/pull/692))
+- Fix deserialize of lycheecache status codes ([#685](https://github.com/hemavarni2405032/lychee/pull/685))
+- Bump tokio from 1.19.2 to 1.20.0 ([#690](https://github.com/hemavarni2405032/lychee/pull/690))
+- Bump openssl-sys from 0.9.74 to 0.9.75 ([#686](https://github.com/hemavarni2405032/lychee/pull/686))
+- Bump serde from 1.0.137 to 1.0.139 ([#688](https://github.com/hemavarni2405032/lychee/pull/688))
+- Bump const_format from 0.2.24 to 0.2.26 ([#680](https://github.com/hemavarni2405032/lychee/pull/680))
+- Bump once_cell from 1.12.1 to 1.13.0 ([#679](https://github.com/hemavarni2405032/lychee/pull/679))
+- Bump regex from 1.5.6 to 1.6.0 ([#681](https://github.com/hemavarni2405032/lychee/pull/681))
+- Add status code in Markdown output ([#677](https://github.com/hemavarni2405032/lychee/pull/677))
+- Bump tracing-subscriber from 0.3.11 to 0.3.14 ([#675](https://github.com/hemavarni2405032/lychee/pull/675))
+- Bump once_cell from 1.12.0 to 1.12.1 ([#674](https://github.com/hemavarni2405032/lychee/pull/674))
+- Bump serde_json from 1.0.81 to 1.0.82 ([#670](https://github.com/hemavarni2405032/lychee/pull/670))
+- Merge branch 'master' of github.com:lycheeverse/lychee
+- Add documentation
+- Bump tokio-stream from 0.1.8 to 0.1.9 ([#641](https://github.com/hemavarni2405032/lychee/pull/641))
+- Bump http from 0.2.7 to 0.2.8 ([#642](https://github.com/hemavarni2405032/lychee/pull/642))
+- Bump tokio from 1.18.2 to 1.19.2 ([#643](https://github.com/hemavarni2405032/lychee/pull/643))
+- Refactor request types ([#637](https://github.com/hemavarni2405032/lychee/pull/637))
+- Bump openssl-sys from 0.9.73 to 0.9.74 ([#635](https://github.com/hemavarni2405032/lychee/pull/635))
+- Add support for parsing list of status codes from config file ([#636](https://github.com/hemavarni2405032/lychee/pull/636))
+- Bump uuid from 1.1.0 to 1.1.1 ([#633](https://github.com/hemavarni2405032/lychee/pull/633))
+- Fix parsing errors with config options ([#632](https://github.com/hemavarni2405032/lychee/pull/632))
+- Improve configuration example ([#631](https://github.com/hemavarni2405032/lychee/pull/631))
+- Update documentation around excluding links
+- Prepare for release v0.10.0 ([#629](https://github.com/hemavarni2405032/lychee/pull/629))
+- Bump const_format from 0.2.23 to 0.2.24 ([#628](https://github.com/hemavarni2405032/lychee/pull/628))
+- Exclude example domains as per RFC 2606 from checking ([#627](https://github.com/hemavarni2405032/lychee/pull/627))
+- Add support for URI remapping ([#620](https://github.com/hemavarni2405032/lychee/pull/620))
+- Add support for excluding paths from link checking ([#623](https://github.com/hemavarni2405032/lychee/pull/623))
+- Bump uuid from 1.0.0 to 1.1.0 ([#626](https://github.com/hemavarni2405032/lychee/pull/626))
+- Bump once_cell from 1.11.0 to 1.12.0 ([#625](https://github.com/hemavarni2405032/lychee/pull/625))
+- Bump regex from 1.5.5 to 1.5.6 ([#624](https://github.com/hemavarni2405032/lychee/pull/624))
+- Bump once_cell from 1.10.0 to 1.11.0 ([#622](https://github.com/hemavarni2405032/lychee/pull/622))
+- Also dump excluded links ([#615](https://github.com/hemavarni2405032/lychee/pull/615))
+- Add support for comments in `.lycheeignore` ([#616](https://github.com/hemavarni2405032/lychee/pull/616))
+- Bump const_format from 0.2.22 to 0.2.23 ([#611](https://github.com/hemavarni2405032/lychee/pull/611))
+- Bump serde_json from 1.0.80 to 1.0.81 ([#610](https://github.com/hemavarni2405032/lychee/pull/610))
+- Bump tokio from 1.18.0 to 1.18.2 ([#612](https://github.com/hemavarni2405032/lychee/pull/612))
+- Bump serde_json from 1.0.79 to 1.0.80 ([#605](https://github.com/hemavarni2405032/lychee/pull/605))
+- Bump tokio from 1.17.0 to 1.18.0 ([#602](https://github.com/hemavarni2405032/lychee/pull/602))
+- Bump http from 0.2.6 to 0.2.7 ([#603](https://github.com/hemavarni2405032/lychee/pull/603))
+- Bump anyhow from 1.0.56 to 1.0.57 ([#598](https://github.com/hemavarni2405032/lychee/pull/598))
+- Refactor response formatting ([#599](https://github.com/hemavarni2405032/lychee/pull/599))
+- Bump tabled from 0.5.0 to 0.6.0 ([#583](https://github.com/hemavarni2405032/lychee/pull/583))
+- Bump tracing-subscriber from 0.3.9 to 0.3.10 ([#581](https://github.com/hemavarni2405032/lychee/pull/581))
+- Bump wiremock from 0.5.11 to 0.5.12 ([#582](https://github.com/hemavarni2405032/lychee/pull/582))
+- Enhance verbosity check ([#578](https://github.com/hemavarni2405032/lychee/pull/578))
+- Cache verbosity issue (fixes #562)
+- Allow input URLs without scheme (fixes #567)
+- Implement excluding code blocks ([#523](https://github.com/hemavarni2405032/lychee/pull/523))
+- Remove `missing_panic_doc` ([#561](https://github.com/hemavarni2405032/lychee/pull/561))
+- Bump version to v0.9.0 ([#560](https://github.com/hemavarni2405032/lychee/pull/560))
+- Bump reqwest from 0.11.9 to 0.11.10 ([#555](https://github.com/hemavarni2405032/lychee/pull/555))
+- Bump dashmap from 5.1.0 to 5.2.0 ([#554](https://github.com/hemavarni2405032/lychee/pull/554))
+- Add Docker pulls label ([#550](https://github.com/hemavarni2405032/lychee/pull/550))
+- Bump regex from 1.5.4 to 1.5.5 ([#545](https://github.com/hemavarni2405032/lychee/pull/545))
+- Bump anyhow from 1.0.55 to 1.0.56 ([#544](https://github.com/hemavarni2405032/lychee/pull/544))
+- Add links badge
+- Bump once_cell from 1.9.0 to 1.10.0 ([#541](https://github.com/hemavarni2405032/lychee/pull/541))
+- Print Github token error once at the end ([#537](https://github.com/hemavarni2405032/lychee/pull/537))
+- Fix broken pipe error on failing writes to stdout ([#535](https://github.com/hemavarni2405032/lychee/pull/535))
+- Print errors with a different format for easier clickability (fixes #532)
+- Bump wiremock from 0.5.10 to 0.5.11 ([#531](https://github.com/hemavarni2405032/lychee/pull/531))
+- Make retry wait time configurable ([#525](https://github.com/hemavarni2405032/lychee/pull/525))
+- Remove background from logo ([#526](https://github.com/hemavarni2405032/lychee/pull/526))
+- Fix link to documentation ([#527](https://github.com/hemavarni2405032/lychee/pull/527))
+- Response output overhaul ([#524](https://github.com/hemavarni2405032/lychee/pull/524))
+- Bump anyhow from 1.0.54 to 1.0.55 ([#522](https://github.com/hemavarni2405032/lychee/pull/522))
+- Bump anyhow from 1.0.53 to 1.0.54 ([#520](https://github.com/hemavarni2405032/lychee/pull/520))
+- Bump tabled from 0.4.2 to 0.5.0 ([#505](https://github.com/hemavarni2405032/lychee/pull/505))
+- Error cleanup ([#510](https://github.com/hemavarni2405032/lychee/pull/510))
+- Bump tracing-subscriber from 0.3.8 to 0.3.9 ([#517](https://github.com/hemavarni2405032/lychee/pull/517))
+- Bump headers from 0.3.6 to 0.3.7 ([#504](https://github.com/hemavarni2405032/lychee/pull/504))
+- Bump serde_json from 1.0.78 to 1.0.79 ([#511](https://github.com/hemavarni2405032/lychee/pull/511))
+- Bump futures from 0.3.19 to 0.3.21 ([#493](https://github.com/hemavarni2405032/lychee/pull/493))
+- Prevent flaky tests ([#514](https://github.com/hemavarni2405032/lychee/pull/514))
+- Replace plain String with SecretString for GitHub token ([#509](https://github.com/hemavarni2405032/lychee/pull/509))
+- Use captured identifiers in format strings ([#507](https://github.com/hemavarni2405032/lychee/pull/507))
+- Update license files ([#497](https://github.com/hemavarni2405032/lychee/pull/497))
+- Fix default config ([#491](https://github.com/hemavarni2405032/lychee/pull/491))
+- Bump dashmap from 5.0.0 to 5.1.0 ([#492](https://github.com/hemavarni2405032/lychee/pull/492))
+- Add html5gum as alternative link extractor ([#480](https://github.com/hemavarni2405032/lychee/pull/480))
+- replace lazy_static by const_format ([#495](https://github.com/hemavarni2405032/lychee/pull/495))
+- Bump tracing-subscriber from 0.3.7 to 0.3.8 ([#494](https://github.com/hemavarni2405032/lychee/pull/494))
+- Update link to troubleshooting guide
+- Bump pretty_assertions from 1.0.0 to 1.1.0 ([#487](https://github.com/hemavarni2405032/lychee/pull/487))
+- Bump headers from 0.3.5 to 0.3.6 ([#485](https://github.com/hemavarni2405032/lychee/pull/485))
+- Bump tokio from 1.15.0 to 1.16.1 ([#482](https://github.com/hemavarni2405032/lychee/pull/482))
+- Add additional parameters for Docker usage example
+- Bump tracing-subscriber from 0.3.6 to 0.3.7 ([#477](https://github.com/hemavarni2405032/lychee/pull/477))
+- Bump serde_json from 1.0.75 to 1.0.78 ([#475](https://github.com/hemavarni2405032/lychee/pull/475))
+- Bump anyhow from 1.0.52 to 1.0.53 ([#476](https://github.com/hemavarni2405032/lychee/pull/476))
+- Bump structopt from 0.3.25 to 0.3.26 ([#469](https://github.com/hemavarni2405032/lychee/pull/469))
+- Bump tracing-subscriber from 0.3.5 to 0.3.6 ([#467](https://github.com/hemavarni2405032/lychee/pull/467))
+- Bump serde_json from 1.0.74 to 1.0.75 ([#466](https://github.com/hemavarni2405032/lychee/pull/466))
+- Add description for `max-cache-age` flag
+- Add caching functionality (v2) ([#443](https://github.com/hemavarni2405032/lychee/pull/443))
+- Bump assert_cmd from 2.0.3 to 2.0.4
+- Update README.md
+- Bump assert_cmd from 2.0.2 to 2.0.3
+- Bump predicates from 2.1.0 to 2.1.1
+- Bump reqwest from 0.11.8 to 0.11.9 ([#455](https://github.com/hemavarni2405032/lychee/pull/455))
+- Update dependencies ([#454](https://github.com/hemavarni2405032/lychee/pull/454))
+- Update README.md
+- Bump wiremock from 0.5.9 to 0.5.10 ([#451](https://github.com/hemavarni2405032/lychee/pull/451))
+- Bump version ([#450](https://github.com/hemavarni2405032/lychee/pull/450))
+- Bump tabled from 0.3.0 to 0.4.2 ([#447](https://github.com/hemavarni2405032/lychee/pull/447))
+- Make retries configurable; align constants ([#446](https://github.com/hemavarni2405032/lychee/pull/446))
+- Stop testing Twitter quirk (see #448)
+- Always hide GH token in opts
+- Bump wiremock from 0.5.8 to 0.5.9 ([#442](https://github.com/hemavarni2405032/lychee/pull/442))
+- Bump serde_json from 1.0.73 to 1.0.74 ([#441](https://github.com/hemavarni2405032/lychee/pull/441))
+- Bump tracing-subscriber from 0.3.4 to 0.3.5 ([#437](https://github.com/hemavarni2405032/lychee/pull/437))
+- Bump http from 0.2.5 to 0.2.6 ([#438](https://github.com/hemavarni2405032/lychee/pull/438))
+- Bump tracing-subscriber from 0.3.3 to 0.3.4 ([#435](https://github.com/hemavarni2405032/lychee/pull/435))
+- Bump anyhow from 1.0.51 to 1.0.52 ([#434](https://github.com/hemavarni2405032/lychee/pull/434))
+- Bump reqwest from 0.11.7 to 0.11.8 ([#432](https://github.com/hemavarni2405032/lychee/pull/432))
+- Add Azure/ResourceModules
+- Bump futures from 0.3.18 to 0.3.19 ([#430](https://github.com/hemavarni2405032/lychee/pull/430))
+- Change usage examples ([#429](https://github.com/hemavarni2405032/lychee/pull/429))
+- Update docs ([#428](https://github.com/hemavarni2405032/lychee/pull/428))
+- Upgrade to Rust 2021 ([#427](https://github.com/hemavarni2405032/lychee/pull/427))
+- Fix docs badge
+- Bump tokio from 1.14.0 to 1.15.0 ([#425](https://github.com/hemavarni2405032/lychee/pull/425))
+- Use tokenizer for extraction; add benchmark ([#424](https://github.com/hemavarni2405032/lychee/pull/424))
+- Bump once_cell from 1.8.0 to 1.9.0 ([#423](https://github.com/hemavarni2405032/lychee/pull/423))
+- Bump serde_json from 1.0.72 to 1.0.73 ([#422](https://github.com/hemavarni2405032/lychee/pull/422))
+- Bump openssl-sys from 0.9.71 to 0.9.72 ([#421](https://github.com/hemavarni2405032/lychee/pull/421))
+- Max concurrency moved to check ([#419](https://github.com/hemavarni2405032/lychee/pull/419))
+- Update README.md
+- Improve concurrency with streams ([#330](https://github.com/hemavarni2405032/lychee/pull/330))
+- Bump reqwest from 0.11.6 to 0.11.7 ([#415](https://github.com/hemavarni2405032/lychee/pull/415))
+- Bump anyhow from 1.0.50 to 1.0.51 ([#412](https://github.com/hemavarni2405032/lychee/pull/412))
+- Bump tracing-subscriber from 0.3.2 to 0.3.3 ([#413](https://github.com/hemavarni2405032/lychee/pull/413))
+- Bump anyhow from 1.0.48 to 1.0.50 ([#411](https://github.com/hemavarni2405032/lychee/pull/411))
+- Bump serde_json from 1.0.71 to 1.0.72 ([#407](https://github.com/hemavarni2405032/lychee/pull/407))
+- Muffet supports recursively checking links ([#403](https://github.com/hemavarni2405032/lychee/pull/403))
+- Bump predicates from 2.0.3 to 2.1.0 ([#404](https://github.com/hemavarni2405032/lychee/pull/404))
+- Bump anyhow from 1.0.47 to 1.0.48 ([#405](https://github.com/hemavarni2405032/lychee/pull/405))
+- Add support for .lycheeignore file #308 ([#402](https://github.com/hemavarni2405032/lychee/pull/402))
+- Bump anyhow from 1.0.45 to 1.0.47 ([#398](https://github.com/hemavarni2405032/lychee/pull/398))
+- Bump tracing-subscriber from 0.3.1 to 0.3.2 ([#401](https://github.com/hemavarni2405032/lychee/pull/401))
+- Only print source in verbose mode ([#400](https://github.com/hemavarni2405032/lychee/pull/400))
+- Use thiserror for error handling ([#399](https://github.com/hemavarni2405032/lychee/pull/399))
+- Bump predicates from 1.0.8 to 2.0.3 ([#381](https://github.com/hemavarni2405032/lychee/pull/381))
+- Bump openssl-sys from 0.9.70 to 0.9.71 ([#395](https://github.com/hemavarni2405032/lychee/pull/395))
+- Bump serde_json from 1.0.70 to 1.0.71 ([#397](https://github.com/hemavarni2405032/lychee/pull/397))
+- Bump version to 0.8.1 ([#396](https://github.com/hemavarni2405032/lychee/pull/396))
+- Add missing newline
+- Add support for different output formats (compact, detailed, markdown) ([#375](https://github.com/hemavarni2405032/lychee/pull/375))
+- Bump serde_json from 1.0.68 to 1.0.70 ([#391](https://github.com/hemavarni2405032/lychee/pull/391))
+- Bump tokio from 1.13.0 to 1.14.0 ([#394](https://github.com/hemavarni2405032/lychee/pull/394))
+- Fix clippy lint ([#383](https://github.com/hemavarni2405032/lychee/pull/383))
+- Bump openssl-sys from 0.9.67 to 0.9.68 ([#373](https://github.com/hemavarni2405032/lychee/pull/373))
+- Disable tokio console-subscriber as it is not published yet
+- Prepare release
+- Move to debian/bullseye:slim as base image ([#370](https://github.com/hemavarni2405032/lychee/pull/370))
+- Bump tracing-subscriber from 0.3.0 to 0.3.1 ([#369](https://github.com/hemavarni2405032/lychee/pull/369))
+- Bump reqwest from 0.11.5 to 0.11.6 ([#364](https://github.com/hemavarni2405032/lychee/pull/364))
+- Bump headers from 0.3.4 to 0.3.5 ([#365](https://github.com/hemavarni2405032/lychee/pull/365))
+- Bump tracing-subscriber from 0.2.25 to 0.3.0 ([#368](https://github.com/hemavarni2405032/lychee/pull/368))
+- Bump structopt from 0.3.21 to 0.3.25 ([#362](https://github.com/hemavarni2405032/lychee/pull/362))
+- Bump console from 0.14.1 to 0.15.0 ([#360](https://github.com/hemavarni2405032/lychee/pull/360))
+- Add link to Github action in marketplace
+- Bump reqwest from 0.11.4 to 0.11.5 ([#356](https://github.com/hemavarni2405032/lychee/pull/356))
+- Bump assert_cmd from 2.0.1 to 2.0.2 ([#357](https://github.com/hemavarni2405032/lychee/pull/357))
+- Add back connection pool ([#355](https://github.com/hemavarni2405032/lychee/pull/355))
+- Remove cache from collector and remove custom reqwest client pool
+- Bump tracing-subscriber from 0.2.24 to 0.2.25 ([#353](https://github.com/hemavarni2405032/lychee/pull/353))
+- Imply "localhost" when loopback IPs are excluded ([#351](https://github.com/hemavarni2405032/lychee/pull/351))
+- Cache `absolute_path` to decrease allocations ([#346](https://github.com/hemavarni2405032/lychee/pull/346))
+- typo. ([#350](https://github.com/hemavarni2405032/lychee/pull/350))
+- Bump pretty_assertions from 0.7.2 to 1.0.0 ([#347](https://github.com/hemavarni2405032/lychee/pull/347))
+- Bump tokio from 1.11.0 to 1.12.0 ([#343](https://github.com/hemavarni2405032/lychee/pull/343))
+- Bump http from 0.2.4 to 0.2.5 ([#344](https://github.com/hemavarni2405032/lychee/pull/344))
+- Bump openssl-sys from 0.9.63 to 0.9.67 ([#342](https://github.com/hemavarni2405032/lychee/pull/342))
+- Bump tracing-subscriber from 0.2.23 to 0.2.24 ([#341](https://github.com/hemavarni2405032/lychee/pull/341))
+- Fix broken pipe when dumping links ([#339](https://github.com/hemavarni2405032/lychee/pull/339))
+- Bump tracing-subscriber from 0.2.22 to 0.2.23 ([#334](https://github.com/hemavarni2405032/lychee/pull/334))
+- Silently ignore absolute paths without base (fixes #320) ([#338](https://github.com/hemavarni2405032/lychee/pull/338))
+- Make inputs required (show help if not provided) ([#329](https://github.com/hemavarni2405032/lychee/pull/329))
+- Bump serde_json from 1.0.67 to 1.0.68 ([#331](https://github.com/hemavarni2405032/lychee/pull/331))
+- Bump anyhow from 1.0.40 to 1.0.44 ([#322](https://github.com/hemavarni2405032/lychee/pull/322))
+- Bump tracing-subscriber from 0.2.20 to 0.2.22 ([#328](https://github.com/hemavarni2405032/lychee/pull/328))
+- Add support for tokio-console ([#318](https://github.com/hemavarni2405032/lychee/pull/318))
+- Reintegrate master
+- Avoid double-encoding already encoded destination paths
+- Add failing test
+- Update docs
+- Merge branch 'master' of github.com:lycheeverse/lychee into local-files
+- whoops
+- Update docs
+- Fix wildcard test
+- Reintegrate master
+- cargo fmt
+- Add test
+- Fix resolving absolute paths
+- wip
+- Add/change file link tests
+- Introduce Base type, which can be a path or URL
+- Update docs
+- Add support for base_dir
+- Add support for local files
+- Bump wiremock from 0.5.2 to 0.5.7 ([#313](https://github.com/hemavarni2405032/lychee/pull/313))
+- Add new flag `--require-https` ([#195](https://github.com/hemavarni2405032/lychee/pull/195))
+- Fix publish workflow ([#309](https://github.com/hemavarni2405032/lychee/pull/309))
+- Bump version to 0.7.1
+- Add changes made by @dblock in #304
+- Directly connect into Result
+- Fix remaining clippy lints
+- run cargo fmt
+- Added support for --exclude-file.
+- remove URL that is currently returning a 503.
+- Use HTTPS links
+- Make configuration file easier to find
+- Mention epub checking
+- lychee is also available on Termux ([#274](https://github.com/hemavarni2405032/lychee/pull/274))
+- Bump tokio from 1.5.0 to 1.6.0 ([#248](https://github.com/hemavarni2405032/lychee/pull/248))
+- Bump assert_cmd from 1.0.3 to 1.0.4 ([#247](https://github.com/hemavarni2405032/lychee/pull/247))
+- Bump openssl-sys from 0.9.62 to 0.9.63 ([#244](https://github.com/hemavarni2405032/lychee/pull/244))
+- Simple URI cache ([#243](https://github.com/hemavarni2405032/lychee/pull/243))
+- Mention examples folder
+- Add example folder ([#241](https://github.com/hemavarni2405032/lychee/pull/241))
+- Bump openssl-sys from 0.9.61 to 0.9.62 ([#240](https://github.com/hemavarni2405032/lychee/pull/240))
+- Bump predicates from 1.0.7 to 1.0.8 ([#239](https://github.com/hemavarni2405032/lychee/pull/239))
+- Add support for multiple schemes ([#237](https://github.com/hemavarni2405032/lychee/pull/237))
+- Skip unsupported schemes  ([#236](https://github.com/hemavarni2405032/lychee/pull/236))
+- Update README.md
+- Reorder sections
+- Fix syntax
+- Add Arch installation instructions
+- Add NixOS
+- Extend installation instructions and move them up
+- Bump regex from 1.4.5 to 1.4.6
+- Add missing docs ([#231](https://github.com/hemavarni2405032/lychee/pull/231))
+- Bump version to 0.7 ([#229](https://github.com/hemavarni2405032/lychee/pull/229))
+- More refactor ([#225](https://github.com/hemavarni2405032/lychee/pull/225))
+- Bump pretty_assertions from 0.7.1 to 0.7.2
+- Fix link to ClientBuilder documentation after refactor
+- Update link to docs
+- Major refactor of codebase ([#208](https://github.com/hemavarni2405032/lychee/pull/208))
+- Merge "failed" status into "error" status ([#191](https://github.com/hemavarni2405032/lychee/pull/191))
+- Don't format help output as shell script in README.md
+- Use new svg logo
+- Update README.md
+- Enabled progress bar is the default now
+- Show progress bar by default (can be disabled with --no-progress)
+- example.com -> example.org
+- Add doc-comment tests
+- Add simple, standalone client
+- Update help message
+- Simplify tests
+- Exclude e-mails from being checked ([#137](https://github.com/hemavarni2405032/lychee/pull/137))
+- Mention GitHub Action in README.md ([#135](https://github.com/hemavarni2405032/lychee/pull/135))
+- Be more explicit about license in docs
+- Add hint about separating inputs from options with `--` (fixes #113) ([#119](https://github.com/hemavarni2405032/lychee/pull/119))
+- Update version
+- Use lychee namespace in lib examples and link to docs
+- Mention recursion support
+- Add JSON output feature
+- Test that cli parameters / usage are in sync in README.md ([#95](https://github.com/hemavarni2405032/lychee/pull/95))
+- Formatting
+- Mention lychee itself as a user
+- Fix link
+- Remove duplicate entry in comparison table
+- Add new lychee users
+- Mention binary releases in `README.md`
+- linkchecker supports HTML files ([#67](https://github.com/hemavarni2405032/lychee/pull/67))
+- Update GitHub token info, add my repo as user ([#66](https://github.com/hemavarni2405032/lychee/pull/66))
+- Make lychee usable as a library #13 ([#46](https://github.com/hemavarni2405032/lychee/pull/46))
+- Mention official Docker image
+- Add support for reading from stdin and make input handling more robust (closes #26)
+- Update troubleshooting guide, add .editorconfig ([#60](https://github.com/hemavarni2405032/lychee/pull/60))
+- Add contributing guidelines and create missing issues
+- Add link to troubleshooting guide
+- Revamp documentation
+- Formatting
+- Update README.md
+- Fix formatting
+- Use different icons for feature comparison ([#32](https://github.com/hemavarni2405032/lychee/pull/32))
+- Update README.md
+- Make GITHUB_TOKEN optional ([#22](https://github.com/hemavarni2405032/lychee/pull/22))
+- Mention support for basic auth by @FabianBG
+- Add support for `include` patterns ([#23](https://github.com/hemavarni2405032/lychee/pull/23))
+- Mention support for relative urls
+- Format unknown fields
+- ordering
+- Update config file support
+- Add little joke
+- Extend comparison table
+- Update README.md
+- Formatting
+- Formatting
+- Add comparison table and recording of demo run ([#17](https://github.com/hemavarni2405032/lychee/pull/17))
+- Update README.md
+- Merge master
+- Update docs
+- Update docs
+- Use timeout instead of connect_timeout
+- Add connection timeout
+- Update docs
+- Move to hubcaps. Allow defining accepted status codes
+- Update docs
+- Support head requests
+- Add support for custom request headers
+- Update docs
+- Add globbing support
+- Add support for scheme (e.g. HTTPS)
+- Update docs
+- update docs
+- Support multiple file inputs
+- update docs
+- update docs
+- Update docs
+- Add support for ignoring certificate errors
+- Make user-agent configurable
+- Make redirects configurable
+- Update docs
+- Add support for excluding URLs
+- update docs
+- Make things blazing fast thanks to async
+- Update docs
+- Update
+- Extend docs
+- Update README.md
+- check normal link first and only if it fails use Github api
+- Hello docs
+
 ## [0.23.0](https://github.com/lycheeverse/lychee/compare/lychee-v0.22.0...lychee-v0.23.0) - 2026-02-13
 
 ### Added
